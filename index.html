@@ -4,7 +4,74 @@
 	    <title>LyMe</title>
 	</head>
 	
-	<body>
-	    <h1>HELLO<h1>
+	<style>
+	    .animated-button {
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 20px;
+            padding: 15px 30px;
+            overflow: hidden;
+            border: 2px solid;
+            border-bottom-width: 4px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: rgba(30, 255, 188, 1);
+            background: rgba(255, 255, 255, 1);
+            transition: color .3s, background .5s;
+        }
+        .animated-button:hover {
+            animation: stripes .75s infinite linear;
+            background: linear-gradient(45deg, rgba(30, 255, 188, 1) 25%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 50%, rgba(30, 255, 188, 1) 50%, rgba(30, 255, 188, 1) 75%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1));
+            background-size: 10px 10px;
+            color: #FF50E5;
+        }
+        @keyframes stripes {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 50px 0;
+            }
+        }
+		
+		
+		
+		
+        .gradient-button {
+            text-decoration: none;
+            display: inline-block;
+            color: white;
+            padding: 20px 30px;
+            margin: 10px 20px;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+            background-size: 200% auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+            transition: .5s;
+        }
+        .gradient-button:hover {
+            background-position: right center;
+        }
+	</style>
+	
+	<body bgcolor="#4682B4" text="#FAEBD7">
+	    <font face="segoe script">
+	
+	    <h1><center>LyMe</center><h1>
+		
+		<p>Это платформа, разработанная для учеников Тридцатки. Здесь вы сможете найти учебные и дополнительные материалы, а также на досуге почитать интересные посты из нашего Telegram-канала. Удачного использования!</p>
+		
+		<br>
+		
+		<a href="mailto:id89675643027@gmail.com" class="gradient-button">Написать разработчику</a>
+		
+		<br>
+		
+		<a href="https://t.me/lyme30" class="animated-button">Наш Telegram</a>
 	</body>
 </html>
