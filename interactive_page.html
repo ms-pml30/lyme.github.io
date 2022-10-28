@@ -199,6 +199,500 @@
 				transform: rotate(360deg);
 			}
 		}
+		
+		
+		
+		
+		.thunder {
+            left: 160px;
+            width: 65px;
+            height: 117px;
+            position: relative;
+        }
+        .thunder:before,
+        .thunder:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: #ff8001;
+            box-shadow: 0 0 0 50px;
+            clip-path: polygon(
+                100% 0,
+                23% 46%,
+                46% 44%,
+                15% 69%,
+                38% 67%,
+                0 100%,
+                76% 57%,
+                53% 58%,
+                88% 33%,
+                60% 37%
+            );
+        }
+        .thunder:after {
+            animation: pulsing 1s infinite;
+            transform: perspective(300px) translateZ(0px);
+        }
+        @keyframes pulsing {
+            to {
+                transform: perspective(300px) translateZ(180px);
+                opacity: 0;
+            }
+        }
+		
+		
+		
+		
+		.juggle-ball {
+            top: 40px;
+            left: 40px;
+            width: 20px;
+            height: 20px;
+            position: relative;
+        }
+        .juggle-ball::before,
+        .juggle-ball::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: #f03355;
+        }
+        .juggle-ball::before {
+            box-shadow: -40px 0 #ff6d00;
+            animation: juggle-ani-1 1s infinite linear;
+        }
+        .juggle-ball::after {
+            transform: rotate(0deg) translateX(40px);
+            animation: juggle-ani-2 1s infinite linear;
+        }
+        @keyframes juggle-ani-1 {
+            100% {
+                transform: translateX(40px);
+            }
+        }
+        @keyframes juggle-ani-2 {
+            100% {
+                transform: rotate(-180deg) translateX(40px);
+            }
+        }
+		
+		
+		
+		
+		.water-loader {
+            --r1: 154%;
+            --r2: 68.5%;
+            width: 200px;
+            height: 100px;
+            animation: water-fill 2s infinite linear;
+            background: radial-gradient(
+                var(--r1) var(--r2) at top,
+                #0000 79.5%,
+                #269af2 80%
+            )
+            center left,
+            radial-gradient(
+                var(--r1) var(--r2) at bottom,
+                #269af2 79.5%,
+                #0000 80%
+            )
+            center center,
+            radial-gradient(var(--r1) var(--r2) at top, #0000 79.5%, #269af2 80%)
+            center right,
+            #ccc;
+            background-size: 50.5% 220%;
+            background-position: -100% 0%, 0% 0%, 100% 0%;
+            background-repeat: no-repeat;
+        }
+        @keyframes water-fill {
+            33% {
+                background-position: 0% 33%, 100% 33%, 200% 33%;
+            }
+            66% {
+                background-position: -100% 66%, 0% 66%, 100% 66%;
+            }
+            100% {
+                background-position: 0% 100%, 100% 100%, 200% 100%;
+            }
+        }
+		
+		
+		
+		
+		@keyframes spin {
+            to {
+                transform: rotate(1turn);
+            }
+        }
+        .wheel-spinner {
+            animation: spin 1s infinite steps(10);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            padding: 1px;
+            background: conic-gradient(#0000 10%, #f03355);
+            -webkit-mask: repeating-conic-gradient(
+                #0000 0deg,
+                #000 1deg 20deg,
+                #0000 21deg 36deg
+            ),
+            radial-gradient(
+                farthest-side,
+                #0000 calc(100% - 9px),
+                #000 calc(100% - 8px)
+            );
+        }
+		
+		
+		
+		
+		@keyframes pump {
+            0% {
+                transform: scale(0.95);
+            }
+            5% {
+                transform: scale(1.1);
+            }
+            39% {
+                transform: scale(0.85);
+            }
+            45% {
+                transform: scale(1);
+            }
+            60% {
+                transform: scale(0.95);
+            }
+            100% {
+                transform: scale(0.9);
+            }
+        }
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            animation: pump 1s linear infinite;
+        }
+        .heart:before,
+        .heart:after {
+            position: absolute;
+            content: "";
+            left: 50px;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            background: red;
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+        .heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+		
+		
+		
+		@keyframes turn {
+            from {
+                transform: rotate3d(0, 0, 0, 0);
+            }
+            to {
+                transform: rotate3d(1, 1, 0, 360deg);
+            }
+        }
+		.cube {
+            width: 20px;
+            height: 20px;
+            transform-style: preserve-3d;
+            animation: turn 5s linear infinite;
+            margin: 50px;
+        }
+        .face {
+            width: 100px;
+            height: 100px;
+            background: #ff6d00;
+            border: 2px solid white;
+            position: absolute;
+            opacity: 0.75;
+            transform: translateZ(50px);
+        }
+        .front {
+            transform: translateZ(50px);
+        }
+        .back {
+            transform: translateZ(-50px) rotateY(180deg);
+        }
+        .left {
+            transform: translateX(-50px) rotateY(-90deg);
+        }
+        .right {
+            transform: translateX(50px) rotateY(90deg);
+        }
+        .top {
+            transform: translateY(-50px) rotateX(90deg);
+        }
+        .bottom {
+            transform: translateY(50px) rotateX(-90deg);
+        }
+		
+		
+		
+		
+		@keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            0% {
+                transform: rotate(0deg);
+            }
+        }
+        .ceiling-fan {
+            background-color: #ff6d00;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            margin: 90px;
+            position: relative;
+            transform-origin: center;
+            animation: spin 0.5s linear infinite;
+        }
+        .ceiling-fan::before {
+            content: "";
+            position: absolute;
+            background-color: white;
+            height: 80px;
+            width: 40px;
+            border-radius: 50% 50% 50% 50% / 85% 85% 15% 15%;
+            top: 36px;
+        }
+        .ceiling-fan::after {
+            content: "";
+            position: absolute;
+            background-color: white;
+            height: 80px;
+            width: 40px;
+            border-radius: 50% 50% 50% 50% / 15% 15% 85% 85%;
+            top: -82px;
+        }
+		
+		
+		
+		
+		#head {
+            border-radius: 50%;
+            background-color: #eebc8c;
+            width: 230px;
+            height: 200px;
+            box-shadow: 0px 18px 35px 0px rgba(0, 0, 0, 0.06);
+            padding: 20px;
+            position: relative;
+            z-index: 100;
+        }
+        #face {
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+            width: 210px;
+            height: 180px;
+            margin: auto;
+            overflow: hidden;
+        }
+        #face-inside {
+            width: 225px;
+            margin: auto;
+            text-align: center;
+            font-weight: bold;
+        }
+        #eyebrows {
+            width: 150px;
+            margin: auto auto 6em auto;
+        }
+        #eyebrows:before,
+        #eyebrows:after {
+            width: 35px;
+            height: 25px;
+            border-radius: 100%;
+            background: black;
+            content: "";
+            display: block;
+        }
+        #eyebrows:before {
+            float: left;
+        }
+        #eyebrows:after {
+            float: right;
+        }
+		
+		
+		
+		
+		.mystery-box {
+            width: 5px;
+            height: 5px;
+            box-shadow: 0px 0px 0px transparent, 90px 5px #a52a2a, 95px 5px #a52a2a,
+            100px 5px #a52a2a, 105px 5px #a52a2a, 110px 5px #a52a2a,
+            115px 5px #a52a2a, 120px 5px #a52a2a, 125px 5px #a52a2a,
+            130px 5px #a52a2a, 135px 5px #a52a2a, 140px 5px #a52a2a,
+            145px 5px #a52a2a, 150px 5px #a52a2a, 155px 5px #a52a2a,
+            85px 10px #a52a2a, 90px 10px #ffa500, 95px 10px #ffa500,
+            100px 10px #ffa500, 105px 10px #ffa500, 110px 10px #ffa500,
+            115px 10px #ffa500, 120px 10px #ffa500, 125px 10px #ffa500,
+            130px 10px #ffa500, 135px 10px #ffa500, 140px 10px #ffa500,
+            145px 10px #ffa500, 150px 10px #ffa500, 155px 10px #ffa500,
+            160px 10px #000, 85px 15px #a52a2a, 90px 15px #ffa500, 95px 15px #000,
+            100px 15px #ffa500, 105px 15px #ffa500, 110px 15px #ffa500,
+            115px 15px #ffa500, 120px 15px #ffa500, 125px 15px #ffa500,
+            130px 15px #ffa500, 135px 15px #ffa500, 140px 15px #ffa500,
+            145px 15px #ffa500, 150px 15px #000, 155px 15px #ffa500,
+            160px 15px #000, 85px 20px #a52a2a, 90px 20px #ffa500,
+            95px 20px #ffa500, 100px 20px #ffa500, 105px 20px #ffa500,
+            110px 20px #a52a2a, 115px 20px #a52a2a, 120px 20px #a52a2a,
+            125px 20px #a52a2a, 130px 20px #a52a2a, 135px 20px #ffa500,
+            140px 20px #ffa500, 145px 20px #ffa500, 150px 20px #ffa500,
+            155px 20px #ffa500, 160px 20px #000, 85px 25px #a52a2a,
+            90px 25px #ffa500, 95px 25px #ffa500, 100px 25px #ffa500,
+            105px 25px #a52a2a, 110px 25px #a52a2a, 115px 25px #000,
+            120px 25px #000, 125px 25px #000, 130px 25px #a52a2a,
+            135px 25px #a52a2a, 140px 25px #ffa500, 145px 25px #ffa500,
+            150px 25px #ffa500, 155px 25px #ffa500, 160px 25px #000,
+            85px 30px #a52a2a, 90px 30px #ffa500, 95px 30px #ffa500,
+            100px 30px #ffa500, 105px 30px #a52a2a, 110px 30px #a52a2a,
+            115px 30px #000, 120px 30px #ffa500, 125px 30px #ffa500,
+            130px 30px #a52a2a, 135px 30px #a52a2a, 140px 30px #000,
+            145px 30px #ffa500, 150px 30px #ffa500, 155px 30px #ffa500,
+            160px 30px #000, 85px 35px #a52a2a, 90px 35px #ffa500,
+            95px 35px #ffa500, 100px 35px #ffa500, 105px 35px #ffa500,
+            110px 35px #000, 115px 35px #000, 120px 35px #ffa500,
+            125px 35px #a52a2a, 130px 35px #a52a2a, 135px 35px #a52a2a,
+            140px 35px #000, 145px 35px #ffa500, 150px 35px #ffa500,
+            155px 35px #ffa500, 160px 35px #000, 85px 40px #a52a2a,
+            90px 40px #ffa500, 95px 40px #ffa500, 100px 40px #ffa500,
+            105px 40px #ffa500, 110px 40px #ffa500, 115px 40px #ffa500,
+            120px 40px #a52a2a, 125px 40px #a52a2a, 130px 40px #000,
+            135px 40px #000, 140px 40px #000, 145px 40px #ffa500,
+            150px 40px #ffa500, 155px 40px #ffa500, 160px 40px #000,
+            85px 45px #a52a2a, 90px 45px #ffa500, 95px 45px #ffa500,
+            100px 45px #ffa500, 105px 45px #ffa500, 110px 45px #ffa500,
+            115px 45px #ffa500, 120px 45px #a52a2a, 125px 45px #a52a2a,
+            130px 45px #000, 135px 45px #ffa500, 140px 45px #ffa500,
+            145px 45px #ffa500, 150px 45px #ffa500, 155px 45px #ffa500,
+            160px 45px #000, 85px 50px #a52a2a, 90px 50px #ffa500,
+            95px 50px #ffa500, 100px 50px #ffa500, 105px 50px #ffa500,
+            110px 50px #ffa500, 115px 50px #ffa500, 120px 50px #ffa500,
+            125px 50px #000, 130px 50px #000, 135px 50px #ffa500,
+            140px 50px #ffa500, 145px 50px #ffa500, 150px 50px #ffa500,
+            155px 50px #ffa500, 160px 50px #000, 85px 55px #a52a2a,
+            90px 55px #ffa500, 95px 55px #ffa500, 100px 55px #ffa500,
+            105px 55px #ffa500, 110px 55px #ffa500, 115px 55px #ffa500,
+            120px 55px #a52a2a, 125px 55px #a52a2a, 130px 55px #ffa500,
+            135px 55px #ffa500, 140px 55px #ffa500, 145px 55px #ffa500,
+            150px 55px #ffa500, 155px 55px #ffa500, 160px 55px #000,
+            85px 60px #a52a2a, 90px 60px #ffa500, 95px 60px #ffa500,
+            100px 60px #ffa500, 105px 60px #ffa500, 110px 60px #ffa500,
+            115px 60px #ffa500, 120px 60px #a52a2a, 125px 60px #a52a2a,
+            130px 60px #000, 135px 60px #ffa500, 140px 60px #ffa500,
+            145px 60px #ffa500, 150px 60px #ffa500, 155px 60px #ffa500,
+            160px 60px #000, 85px 65px #a52a2a, 90px 65px #ffa500, 95px 65px #000,
+            100px 65px #ffa500, 105px 65px #ffa500, 110px 65px #ffa500,
+            115px 65px #ffa500, 120px 65px #ffa500, 125px 65px #000,
+            130px 65px #000, 135px 65px #ffa500, 140px 65px #ffa500,
+            145px 65px #ffa500, 150px 65px #000, 155px 65px #ffa500,
+            160px 65px #000, 85px 70px #a52a2a, 90px 70px #ffa500,
+            95px 70px #ffa500, 100px 70px #ffa500, 105px 70px #ffa500,
+            110px 70px #ffa500, 115px 70px #ffa500, 120px 70px #ffa500,
+            125px 70px #ffa500, 130px 70px #ffa500, 135px 70px #ffa500,
+            140px 70px #ffa500, 145px 70px #ffa500, 150px 70px #ffa500,
+            155px 70px #ffa500, 160px 70px #000, 85px 75px #000, 90px 75px #000,
+            95px 75px #000, 100px 75px #000, 105px 75px #000, 110px 75px #000,
+            115px 75px #000, 120px 75px #000, 125px 75px #000, 130px 75px #000,
+            135px 75px #000, 140px 75px #000, 145px 75px #000, 150px 75px #000,
+            155px 75px #000, 160px 75px #000;
+            animation: jump 2s linear infinite;
+        }
+		@keyframes jump {
+            0%,
+            100% {
+                transform: translateY(20px);
+            }
+            50% {
+                transform: translateY(30px);
+            }
+        }
+		
+		
+		
+		
+		@keyframes jump {
+            0%,
+            100% {
+                transform: translateY(20px);
+            }
+            50% {
+                transform: translateY(100px);
+            }
+        }
+		.mario {
+            width: 5px;
+            height: 5px;
+            box-shadow: 0px 0px 0px transparent, 130px 5px #ffa500, 135px 5px #ffa500,
+            140px 5px #ffa500, 95px 10px #de4513, 100px 10px #de4513, 105px 10px #de4513,
+            110px 10px #de4513, 115px 10px #de4513, 130px 10px #ffa500,
+            135px 10px #ffa500, 140px 10px #ffa500, 90px 15px #de4513, 95px 15px #de4513,
+            100px 15px #de4513, 105px 15px #de4513, 110px 15px #de4513,
+            115px 15px #de4513, 120px 15px #de4513, 125px 15px #de4513,
+            130px 15px #de4513, 135px 15px #ffa500, 140px 15px #ffa500,
+            90px 20px #a52a2a, 95px 20px #a52a2a, 100px 20px #a52a2a, 105px 20px #ffa500,
+            110px 20px #ffa500, 115px 20px #000, 120px 20px #ffa500, 130px 20px #4545bb,
+            135px 20px #4545bb, 140px 20px #4545bb, 85px 25px #a52a2a, 90px 25px #ffa500,
+            95px 25px #a52a2a, 100px 25px #ffa500, 105px 25px #ffa500,
+            110px 25px #ffa500, 115px 25px #000, 120px 25px #ffa500, 125px 25px #ffa500,
+            130px 25px #4545bb, 135px 25px #4545bb, 140px 25px #4545bb,
+            85px 30px #a52a2a, 90px 30px #ffa500, 95px 30px #a52a2a, 100px 30px #a52a2a,
+            105px 30px #ffa500, 110px 30px #ffa500, 115px 30px #ffa500,
+            120px 30px #a52a2a, 125px 30px #ffa500, 130px 30px #ffa500,
+            135px 30px #ffa500, 140px 30px #4545bb, 85px 35px #a52a2a, 90px 35px #a52a2a,
+            95px 35px #ffa500, 100px 35px #ffa500, 105px 35px #ffa500,
+            110px 35px #ffa500, 115px 35px #a52a2a, 120px 35px #a52a2a,
+            125px 35px #a52a2a, 130px 35px #a52a2a, 135px 35px #a52a2a,
+            95px 40px #ffa500, 100px 40px #ffa500, 105px 40px #ffa500,
+            110px 40px #ffa500, 115px 40px #ffa500, 120px 40px #ffa500,
+            125px 40px #ffa500, 130px 40px #4545bb, 75px 45px #4545bb, 80px 45px #4545bb,
+            85px 45px #4545bb, 90px 45px #4545bb, 95px 45px #4545bb, 100px 45px #de4513,
+            105px 45px #4545bb, 110px 45px #4545bb, 115px 45px #4545bb,
+            120px 45px #de4513, 125px 45px #4545bb, 70px 50px #4545bb, 75px 50px #4545bb,
+            80px 50px #4545bb, 85px 50px #4545bb, 90px 50px #4545bb, 95px 50px #4545bb,
+            100px 50px #4545bb, 105px 50px #de4513, 110px 50px #4545bb,
+            115px 50px #4545bb, 120px 50px #4545bb, 125px 50px #de4513, 140px 50px #000,
+            65px 55px #ffa500, 70px 55px #ffa500, 75px 55px #4545bb, 80px 55px #4545bb,
+            85px 55px #4545bb, 90px 55px #4545bb, 95px 55px #4545bb, 100px 55px #4545bb,
+            105px 55px #de4513, 110px 55px #de4513, 115px 55px #de4513,
+            120px 55px #de4513, 125px 55px #de4513, 140px 55px #000, 65px 60px #ffa500,
+            70px 60px #ffa500, 75px 60px #ffa500, 85px 60px #de4513, 90px 60px #de4513,
+            95px 60px #4545bb, 100px 60px #de4513, 105px 60px #de4513, 110px 60px #ff0,
+            115px 60px #de4513, 120px 60px #de4513, 125px 60px #ff0, 130px 60px #de4513,
+            135px 60px #000, 140px 60px #000, 70px 65px #ffa500, 80px 65px #000,
+            85px 65px #de4513, 90px 65px #de4513, 95px 65px #de4513, 100px 65px #de4513,
+            105px 65px #de4513, 110px 65px #de4513, 115px 65px #de4513,
+            120px 65px #de4513, 125px 65px #de4513, 130px 65px #de4513, 135px 65px #000,
+            140px 65px #000, 75px 70px #000, 80px 70px #000, 85px 70px #000,
+            90px 70px #de4513, 95px 70px #de4513, 100px 70px #de4513, 105px 70px #de4513,
+            110px 70px #de4513, 115px 70px #de4513, 120px 70px #de4513,
+            125px 70px #de4513, 130px 70px #de4513, 135px 70px #000, 140px 70px #000,
+            70px 75px #000, 75px 75px #000, 80px 75px #000, 85px 75px #de4513,
+            90px 75px #de4513, 95px 75px #de4513, 100px 75px #de4513, 105px 75px #de4513,
+            110px 75px #de4513, 115px 75px #de4513, 70px 80px #000, 85px 80px #de4513,
+            90px 80px #de4513, 95px 80px #de4513;
+            animation: jump 2s linear infinite; 
+        }
+		
+		
+		
+		
+		
 	</style>
 	
 	<body>
@@ -230,6 +724,61 @@
 		<br><br><br>
 		
 		<p><center><b><big>Анимации</big></b></center></p>
+		
+		<br><br><br>
+		
+		<center><div class="thunder"></div></center>
+		
+		<br><br><br>
+		
+		<center><div class="mario"></div></center>
+		
+		<br><br><br><br><br><br>
+		
+		<center><div class="mystery-box"></div></center>
+		
+		<br><br><br><br><br><br><br><br>
+		
+		<center><div id="head">
+            <div id="face">
+                <div id="face-inside">
+                    <div id="hair"></div>
+                    <div id="eyebrows"></div>
+                    <h1>ㅅ</h1>
+                </div>
+            </div>
+        </div></center>
+		
+		<br><br><br>
+		
+		<center><div class="ceiling-fan"></div></center>
+		
+		<br><br><br>
+		
+		<center><div class="cube">
+		    <div class="face top"></div>
+			<div class="face bottom"></div>
+			<div class="face left"></div>
+			<div class="face right"></div>
+			<div class="face front"></div>
+			<div class="face back"></div>
+		</div></center>
+		
+		<br><br><br><br><br>
+		
+		<center><div class="heart"></div></center>
+		
+		<br><br><br>
+		
+		<center><div class="wheel-spinner"></div></center>
+		
+		<br><br><br>
+		
+		<center><div class="water-loader"></div></center>
+		
+		<br><br><br>
+		
+		<center><div class="juggle-ball"></div></center>
 		
 		<br><br><br>
 		
