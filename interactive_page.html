@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Интерактивная страница</title>
+	</head>
+	
+	<style>
+        .closing-button {
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            color: white;
+            box-shadow: 0 0 0 2px white;
+            padding: 20px 0;
+            width: 150px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            overflow: hidden;
+        }
+        .closing-button span {
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            z-index: 5;
+        }
+        .closing-button:before, .closing-button:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+        .closing-button:before {
+            transform: translateX(-100%);
+            background: white;
+            transition: transform .3s cubic-bezier(.55, .055, .675, .19);
+        }
+        .closing-button:after {
+            background: #413ad5;
+            transform: translateX(100%);
+            transition: transform .3s cubic-bezier(.16, .73, .58, .62) .3s;
+        }
+        .closing-button:hover:before, .closing-button:hover:after {
+            transform: translateX(0);
+        }
+		
+		
+		
+		
+		@keyframes split-rotate {
+		    50% {
+			    width: 140px;
+				height: 140px;
+				transform: rotate(180deg);
+			}
+			100% {
+			    transform: rotate(360deg);
+			}
+		}
+		.square-loader {
+		    width: 100px;
+			height: 100px;
+			color: #f03355;
+			background: conic-gradient(
+			        from -45deg at top 50px left 50%,
+				    #0000,
+				    currentColor 1deg 90deg,
+				    #0000 91deg
+				),
+				conic-gradient(
+				    from 45deg at right 50px top 50%,
+					#0000,
+					currentColor 1deg 90deg,
+					#0000 91deg
+				),
+				conic-gradient(
+				    from 135deg at bottom 50px left 50%,
+					#0000,
+					currentColor 1deg 90deg,
+					#0000 91deg
+				),
+				conic-gradient(
+				    from -135deg at left 50px top 50%,
+					#0000,
+					currentColor 1deg 90deg,
+					#0000 91deg
+				);
+			animation: split-rotate 1.5s
+			infinite cubic-bezier(0.3, 1, 0, 1);
+		}
+		
+		
+		
+		@keyframes pulsing {
+		    to {
+			    transform: scale(1.8);
+				opacity: 0;
+			}
+		}
+		.cloud {
+		    width: 162px;
+			height: 90px;
+			top: 25px;
+			left: 50px;
+			color: #269af2;
+			--c: radial-gradient(farthest-side,
+			currentColor 96%, #0000);
+			background: var(--c) 100% 100% /30% 60%,
+			var(--c) 70% 0 /50% 100%,
+			    var(--c) 0 100% /36% 68%,
+				var(--c) 27% 18% /26% 40%,
+				linear-gradient(currentColor 0 0)
+				bottom/67% 58%;
+			background-repeat: no-repeat;
+			position: relative;
+		}
+		.cloud::after {
+		    content: "";
+			animation: pulsing 1s infinite;
+			position: absolute;
+			inset: 0;
+			background: inherit;
+			opacity: 0.4;
+		}
+		
+		
+		
+		
+		@keyframes sidetoside {
+		    50% {
+			    left: 100%;
+				transform: translateX(calc(-100% - 4px));
+			}
+		}
+		.loader {
+		    top: 50px;
+			left: 20px:
+			width: 220px;
+			height: 22px;
+			border-radius: 40px;
+			color: #f72585;
+			border: 2px solid;
+			position: relative;
+		}
+		.loader::before {
+		    content: "";
+			position: absolute;
+			margin: 2px;
+			width: 25%;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			border-radius: inherit;
+			background: currentColor;
+			animation: sidetoside 1s infinite linear;
+		}
+		
+		
+		
+		
+		.yin-yang {
+		    width: 96px;
+			height: 48px;
+			background: white;
+			border-color: black;
+			position: relative;
+			border-style: solid;
+			border-width: 2px 2px 50px 2px;
+			border-radius: 100%;
+			animation: spin 8s linear infinite;
+		}
+		.yin-yang::before {
+		    content: "";
+			background: white;
+			border: 18px solid black;
+			position: absolute;
+			top:50%;
+			left: 0;
+			border-radius: 100%;
+			width: 12px;
+			height: 12px;
+		}
+		.yin-yang::after {
+		    content: "";
+			background: black;
+			border: 18px solid white;
+			position: absolute;
+			top:50%;
+			left: 50%;
+			border-radius: 100%;
+			width: 12px;
+			height: 12px;
+		}
+		@keyframes spin {
+		    100% {
+			    -webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+	
+	<body>
+	    <body background="ipback.jpg">
+		
+		<font face="lucida console">
+		<font color="#D2B48C">
+	
+	    <p><center><b><big>Интерактивная страница</big></b></center></p>
+		
+		<script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+        <center><lord-icon
+            src="https://cdn.lordicon.com/bbsvenly.json"
+            trigger="hover"
+            style="width:250px;height:250px">
+        </lord-icon></center>
+		
+		<br>
+		
+		<font color="#FF00FF">
+		
+		<p><center><b><big>Игры</big></b></center></p>
+		
+		<a href="oxo.html" class="closing-button"><span>OXO</span></a>
+		<a href="snake.html" class="closing-button"><span>Змейка</span></a>
+		<a href="tennis.html" class="closing-button"><span>Теннис</span></a>
+		<a href="run.html" class="closing-button"><span>Раннер</span></a>
+		
+		<br><br><br>
+		
+		<p><center><b><big>Анимации</big></b></center></p>
+		
+		<br><br><br>
+		
+		<center><div class="square-loader"></div></center>
+		
+		<br><br><br>
+		
+		<center><div class="loader"></div></center>
+		
+		<br><br><br>
+		
+		<center><div class="cloud"></div></center>
+		
+		<br><br><br>
+		
+		<center><div class="yin-yang"></div></center>
+	</body>
+</html>
