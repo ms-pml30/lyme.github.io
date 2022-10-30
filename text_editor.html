@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<!-- служебная часть -->
+
+<head>
+  <!-- заголовок страницы -->
+  <title>Текстовый редактор</title>
+  <!-- настраиваем служебную информацию для браузеров -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- задаём CSS-стили прямо здесь же, чтобы всё было в одном файле -->
+  <style type="text/css">
+    /*задаём общие параметры для всей страницы: шрифт и отступы*/
+    body {
+      text-align: center;
+      margin: 10;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    /*закончили со стилями*/
+  </style>
+  <!-- закрываем служебную часть страницы -->
+</head>
+<!-- началось содержимое страницы -->
+
+<body>
+  <!-- началась видимая часть -->
+  <!-- заголовок страницы -->
+  <h2>Текстовый редактор с автосохранением</h2>
+  <!-- большой блок для ввода текста: высота в половину, а ширина — во весь экран, назвывается "text_area", обведено рамкой толщиной в 1 пиксель, выравнивание текста — по левому краю -->
+  <div id="editor" contenteditable="true"
+    style="height: 50%; width: 100%; border: solid; border-width: 1px; text-align: left">
+  </div>
+  <!-- закончилась видимая часть -->
+  <!-- пишем скрипт, который будет постоянно сохранять наш текст -->
+  <script>
+    // если в нашем хранилище уже что-то есть…
+    if (localStorage.getItem('text_in_editor') !== null) {
+      // …то отображаем его содержимое в нашем редакторе
+      document.getElementById('editor').innerHTML = localStorage.getItem('text_in_editor');
+    }
+    // отслеживаем каждое нажатие клавиши и при каждом нажатии выполняем команду
+    document.addEventListener('keydown', function (e) {
+      // записываем содержимое нашего редактора в хранилище
+      localStorage.setItem('text_in_editor', document.getElementById('editor').innerHTML);
+    });
+ // закончился скрипт
+  </script>
+  <!-- закончилось содержимое страницы -->
+</body>
+<!-- конец всего HTML-документа -->
+
+</html>
