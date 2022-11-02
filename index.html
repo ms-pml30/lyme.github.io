@@ -532,6 +532,178 @@
             background: none;
             box-shadow: 0 0 0 1px #bbb inset, 0 1px 3px rgba(0,0,0,.5) inset, 0 1px 2px #fff;
         }
+		
+		
+		
+		
+		.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 220px;
+  height: 60px;
+  
+  background-color: var(--light-theme);
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--color);
+  transition: all 0.3s;
+  position: relative;
+
+  text-align: center;
+  overflow: hidden;
+
+  border-radius: 5px;
+  box-shadow: 0 6px 30px -10px rgba(#CCCCCC, 1);
+  
+  &:hover {
+    transform: translateX(5px) translateY(-7px);
+  }
+}
+
+.shop-now {
+  position: relative;
+  .santa-icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -17px;
+    right: -20px;
+    transform: rotate(14deg);
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.snowflake-grid {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 50px;
+  gap: 5px;
+
+  width: 100px;
+  transform: scale(0.4);
+  div {
+    border-radius: 5px;
+  }
+  
+  .snowflake-item {
+    position: relative;
+  }
+}
+
+.to-left {
+  position: absolute;
+  top: -4px;
+  left: -35px;
+  animation: swing 3s infinite;
+  div {
+    animation: flash 3s infinite;
+  }
+}
+
+.to-right {
+  position: absolute;
+  top: -25px;
+  right: -35px;
+  animation: swing 2.5s infinite;
+  div {
+    animation: flash 2.5s infinite;
+  }
+}
+
+.border-left {
+  border-left: 4px solid #e6dada;
+  
+}
+
+.border-right {
+  border-right: 4px solid #e6dada;
+}
+
+.border-bottom {
+  border-bottom: 4px solid #e6dada;
+}
+
+.border-top {
+  border-top: 4px solid #e6dada;
+}
+
+.sub-items {
+  height: 28px;
+  width: 28px;
+}
+
+.m-w-15 {
+  width: 15px;
+}
+
+.m-h-15 {
+  height: 15px;
+}
+
+.r-270 {
+  transform: rotate(270deg);
+}
+
+.r-180 {
+  transform: rotate(180deg);
+}
+
+.r-90 {
+  transform: rotate(90deg);
+}
+
+.pull-down {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.pull-down-right {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+
+.pull-right {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.pull-left {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+.m-3 {
+  margin: 3px;
+}
+
+@keyframes swing {
+  50% {
+    transform: rotateZ(10deg) scale(0.4);
+  }
+}
+
+@keyframes flash {
+  50% {
+    border-color: #485563; 
+  }
+}
 	</style>
 	
 	<body bgcolor="#4682B4" text="#FAEBD7">
@@ -543,50 +715,106 @@
 		
 		<br>
 		
-		<a href="logowr_docs.html" class="sliding-button">Документация по LogoWriter (5-6 классы)</a>
+		<div class="container">
+            <div class="btn">
+                <div class="shop-now" onclick="location.href='welcome.html'">Welcome</div>
+                <div class="snowflake-grid to-left">
+                    <div class="snowflake-item border-bottom border-right">
+                    <div class="sub-items border-right border-bottom pull-down">
+                    <div class="m-w-15 m-h-15 border-right border-bottom m-3"></div>
+                </div>
+                </div>
+         <div class="snowflake-item border-bottom border-left">
+            <div
+               class="sub-items border-right border-bottom r-90 pull-down-right"
+               >
+               <div class="m-w-15 m-h-15 border-right border-bottom m-3"></div>
+            </div>
+         </div>
+         <div class="snowflake-item border-top border-right">
+            <div class="sub-items border-right border-bottom r-270 pull-right">
+               <div class="m-w-15 m-h-15 border-right border-bottom m-3"></div>
+            </div>
+         </div>
+         <div class="snowflake-item border-top border-left">
+            <div class="sub-items border-right border-bottom r-180 pull-left">
+               <div class="m-w-15 m-h-15 border-right border-bottom m-3"></div>
+            </div>
+         </div>
+      </div>
+      <div class="snowflake-grid to-right">
+         <div class="snowflake-item border-bottom border-right">
+            <div class="sub-items border-right border-bottom pull-down">
+               <div class="m-w-15 m-h-15 border-right border-bottom m-3"></div>
+            </div>
+         </div>
+         <div class="snowflake-item border-bottom border-left">
+            <div
+               class="sub-items border-right border-bottom r-90 pull-down-right"
+               >
+               <div class="m-w-15 m-h-15 border-right border-bottom m-3"></div>
+            </div>
+         </div>
+         <div class="snowflake-item border-top border-right">
+            <div class="sub-items border-right border-bottom r-270 pull-right">
+               <div class="m-w-15 m-h-15 border-right border-bottom m-3"></div>
+            </div>
+         </div>
+         <div class="snowflake-item border-top border-left">
+            <div class="sub-items border-right border-bottom r-180 pull-left">
+               <div class="m-w-15 m-h-15 border-right border-bottom m-3"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
 		
 		<br>
 		
-		<a href="it_razd.html" class="border-button">Раздатки по информатике (5-6 классы)</a>
+		<center><a href="logowr_docs.html" class="sliding-button">Документация по LogoWriter (5-6 классы)</a></center>
 		
 		<br>
 		
-		<a href="it_dop.html" class="shine-button">Дополнительные материалы по информатике</a>
+		<center><a href="it_razd.html" class="border-button">Раздатки по информатике (5-6 классы)</a></center>
 		
 		<br>
 		
-		<a href="helppage.html" class="custom-btn btn-5">Helppage</a>
+		<center><a href="it_dop.html" class="shine-button">Дополнительные материалы по информатике</a></center>
 		
 		<br>
 		
-		<a href="interactive_page.html" class="double-border-button">Интерактивная страница</a>
+		<center><a href="helppage.html" class="custom-btn btn-5">Helppage</a></center>
 		
 		<br>
 		
-		<a href="mailto:id89675643027@gmail.com" class="gradient-button">Написать разработчику</a>
+		<center><a href="interactive_page.html" class="double-border-button">Интерактивная страница</a></center>
 		
 		<br>
 		
-		<a href="posts.html" class="animated-button">Страница публикаций</a>
+		<center><a href="mailto:id89675643027@gmail.com" class="gradient-button">Написать разработчику</a></center>
 		
 		<br>
 		
-		<a class="glow-on-hover" type="button" href="software.html">Программы</a>
+		<center><a href="posts.html" class="animated-button">Страница публикаций</a></center>
 		
 		<br>
 		
-		<a href="android_app.html" class="button27">Приложение для Android</a>
+		<center><a class="glow-on-hover" type="button" href="software.html">Программы</a></center>
 		
 		<br>
 		
-		<a href="sign_up.html" class="button17" tabindex="0">Sign Up</a>
+		<center><a href="android_app.html" class="button27">Приложение для Android</a></center>
 		
 		<br>
 		
-		<a href="Главная.html" class="button">О нас</a>
+		<center><a href="sign_up.html" class="button17" tabindex="0">Sign Up</a></center>
 		
 		<br>
 		
-		<a href="https://www.tinkoff.ru/payments/persons/phone/" class="button9">Поддержать автора (перевод по номеру телефона (отправить сумму на номер телефона +7(967)564-30-27) через Тинькофф)</a>
+		<center><a href="Главная.html" class="button">О нас</a></center>
+		
+		<br>
+		
+		<center><a href="https://www.tinkoff.ru/payments/persons/phone/" class="button9">Поддержать автора (перевод по номеру телефона (отправить сумму на номер телефона +7(967)564-30-27) через Тинькофф)</a></center>
 	</body>
 </html>
