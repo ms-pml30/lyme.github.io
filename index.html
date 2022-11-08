@@ -744,6 +744,55 @@
     @keyframes pulsate {
         50% {color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;}
     }
+	
+	
+	
+	
+	a.button2, a.button2:before {
+        display: inline-block;
+        font-size: 20px;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 100px;
+        border: solid rgb(4,88,192);
+        border-width: 3px 10px;
+        outline: none;
+        opacity: 1;
+        transition: .6s, opacity 0s 9999999s, visibility 0s 9999999s;
+    } 
+a.button2 {
+  position: relative;
+  padding: calc(8px + 3px - 1px) calc(15px + 10px - 1px);
+  border: 1px solid rgba(62,153,239,.5);
+  background: linear-gradient(to left, rgb(62,153,239) 1%, #fff 3%, rgb(44,135,232) 8%, rgba(255,255,255,.3) 50%, rgb(44,135,232) 92%, #fff 97%, rgb(62,153,239) 99%) no-repeat;
+}
+a.button2:before {
+  content:  "Другие проекты автора";
+  position:  absolute; 
+  bottom: -7px;
+  left: -1px;
+  width: calc(100% - (15px + 10px - 1px)*2);
+  background: #fff linear-gradient(rgb(58,160,253), rgb(4,88,192) 60%, rgb(49,112,201));
+  box-shadow: 0 10px 18px rgba(0,0,0,.5);
+}
+a.button2:hover {
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+a.button2:hover:before {
+  border-color: #0766d8;
+  background: #fff linear-gradient(#3fadff, #0766d8 60%, #3279dd);
+}
+a.button2:focus,
+a.button2:active {
+  -webkit-transform: scale(2, 2);
+  transform: scale(2, 2);
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s;
+}
 	</style>
 	
 	<body bgcolor="#4682B4" text="#FAEBD7">
@@ -856,6 +905,10 @@
 		<br>
 		
 		<center><a href="some_more_about.html" class="button4">Что-то ещё о нас</a></center>
+		
+		<br>
+		
+		<center><a href="other.html" class="button2" tabindex="0">Другие проекты автора</a></center>
 		
 		<br>
 		
