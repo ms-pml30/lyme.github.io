@@ -921,6 +921,69 @@ background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
     inset -4px -4px 6px 0 rgba(255,255,255,.2),
     inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
 }
+
+
+
+
+a.btn_hover {
+  text-decoration: none;
+  border: 3px solid yellow;
+  color: transparent;
+  padding: 40px 80px;
+  font-size: 28px;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 0.5s;
+  position: relative;
+}
+a.btn_hover:before {
+  content: "Contacts";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  background: rgb(34, 34, 34);
+  font-size: 28px;
+  top: 0;
+  left: 100%;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(0) rotatey(0);
+  opacity: 0;
+}
+a.btn_hover:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+a.btn_hover:after {
+  content: "Contacts";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  background: rgb(34, 34, 34);
+  font-size: 28px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+}
+a.btn_hover:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
 	</style>
 	
 	<body bgcolor="#4682B4" text="#FAEBD7">
@@ -1033,6 +1096,10 @@ background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
 		<br>
 		
 		<center><a href="some_more_about.html" class="button4">Что-то ещё о нас</a></center>
+		
+		<br>
+		
+		<center><a href="contacts.html" class="btn_hover">Contacts</a></center>
 		
 		<br>
 		
