@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>LyMe Lite</title>
+	
+        <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById('tc_button').onclick = function()
+                {
+                    if(document.body.className != 'new_class')
+                    {
+                        document.body.className = 'new_class';
+                    }
+                    else
+                    {
+                        document.body.className = '';
+                    }
+                }
+            }
+        </script>
+		
+        <style>
+            body { background: #FFFFFF; color: #000000; min-height: 100%; }
+            .new_class { background: #000000; color: #FFFFFF; }
+        </style>
+    </head>
+    <body>
+	    <font face="segoe ui">
+	
+        <button id="tc_button" name="tc_button">Сменить тему</button>
+		
+		<br>
+		
+		<center><b><big><strong>LyMe Lite</strong></big></b></center>
+		
+		<center><p>Это упрощённая версия LyMe. Здесь вы сможете найти самое важное на портале, а также небольшие приятные мелочи.</p></center>
+		
+		<br>
+		
+		<center><button onclick="window.location.href = 'it.torrent';">Информатика для 5-6 классов</button></center>
+		
+		<br>
+		
+		<center><button onclick="window.location.href = 'tetris.html';">Тетрис</button></center>
+		
+		<br>
+		
+		<center><button onclick="window.location.href = 'https://t.me/lyme30';">Telegram-канал</button></center>
+		
+		<br>
+		
+		<center><button onclick="window.location.href = 'index.html';">Полная версия</button></center>
+    </body>
+</html>
